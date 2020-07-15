@@ -6,17 +6,15 @@ import ImageGrid from './components/ImageGrid';
 import configureStore from './store';
 const store = configureStore();
 
-class App extends Component {
-    render() {
-        return (
-            <Provider store={store}>
-                <div>
-                    <Header />
-                    <ImageGrid />
-                </div>
-            </Provider>
-        );
-    }
-}
+const App = () => {
+    return (
+        <Provider store={store}>
+            <div>
+                <Header />
+                <ImageGrid />
+            </div>
+        </Provider>
+    );
+};
 
 export default App;
