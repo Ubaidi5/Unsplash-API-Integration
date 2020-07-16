@@ -1,14 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import './styles.css';
 import { loadImages } from '../../action';
 import Stats from '../stats/stats';
 
 const ImageGrid = props => {
-    useEffect(() => {
-        props.loadImages;
-    }, []);
-
     const { images, error, imageStats } = props;
     return (
         <div className="content">
@@ -54,7 +50,4 @@ const mapStateToProps = ({ isLoading, images, error, imageStats }) => ({
 const mapDispatchToProps = dispatch => ({
     loadImages: () => dispatch(loadImages()),
 });
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(ImageGrid);
+export default connect(mapStateToProps, mapDispatchToProps)(ImageGrid);
